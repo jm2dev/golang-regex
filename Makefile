@@ -37,4 +37,14 @@ urls:			## run urls suite
 
 phonenumbers:	## run phonenumbers suite
 	@go run github.com/onsi/ginkgo/v2/ginkgo --label-filter=phonenumbers
+
+##@ Reporting
+reports:		## generate reports
+	@go run github.com/onsi/ginkgo/v2/ginkgo --json-report=report.json --junit-report=report.xml --output-dir=reports
+
+allure: clean	## html allure report
+	@mkdir allure-results && cp reports/report.xml allure-results && allure generate && echo "allure open"
+
+clean:			## delete allure directories
+	@rm -fr allure-results allure-report
 # end

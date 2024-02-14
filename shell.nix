@@ -3,5 +3,5 @@
 with pkgs;
 
 mkShell {
-  buildInputs = [ go gopls ginkgo ];
+  buildInputs = [ go gopls ginkgo allure ];
 }
