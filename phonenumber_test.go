@@ -7,10 +7,10 @@ import (
 	"regexp"
 )
 
-var _ = Describe("Phonenumber", func() {
-		r, _ := regexp.Compile("[0-9]{9}")
+var _ = Describe("Phonenumber", Label("phonenumbers"), func() {
+		r, _ := regexp.Compile("[0-9\\-]{9,11}")
 
-		Context("extract Spanish phone numbersl from string", func() {
+		Context("extract Spanish phone numbers from string", func() {
 			It("should find 123456789", func() {
 				actual := r.FindString("ejemplo con 123456789 y cosas")
 				Expect(actual).To(Equal("123456789"))
