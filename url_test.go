@@ -6,7 +6,7 @@ import (
 	"regexp"
 )
 
-var _ = Describe("Challenge 1", func() {
+var _ = Describe("Challenge 1", Label("urls"), func() {
 	Describe("URLs", func() {
 		r, _ := regexp.Compile("(https://www.example.[a-z]{3}([/a-z0-9\\-]*))")
 

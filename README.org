@@ -1,5 +1,35 @@
 #+title: VLC codes regex
 
-* Tasks [0/2][0%]
+* Overview
+
+BDD with ginkgo and regular expressions.
+
+See [[https://github.com/z0rzi/dev-dive/tree/master/2024-02-13_Regular_Expressions][Valencia codes deep dive with regular expressions]].
+
+* Usage
+
+#+begin_src sh :results code :exports both
+make
+#+end_src
+
+#+RESULTS:
+#+begin_src sh
+ golang-regex
+
+
+Usage:
+ make <target>
+
+General
+help             Display this help.
+
+Development
+test             run all tests
+phonenumbers     run phonenumbers suite
+#+end_src
+
+* Tasks [1/3][33%]
 - [ ] no import project
 - [ ] no need for ginkgo tool
+- [X] challenge 1: urls
+- [ ] challenge 2: phone numbers
