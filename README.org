@@ -28,8 +28,9 @@ test             run all tests
 phonenumbers     run phonenumbers suite
 #+end_src
 
-* Tasks [1/3][33%]
-- [ ] no import project
-- [ ] no need for ginkgo tool
+* Tasks [3/4][75%]
+
+- [X] no import project
+- [X] no need for ginkgo tool
 - [X] challenge 1: urls
 - [ ] challenge 2: phone numbers

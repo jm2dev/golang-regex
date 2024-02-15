@@ -26,7 +26,7 @@ help:		## Display this help.
 	@printf -- "\n"
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n make <target>\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "%-15s %s\n", $$1, $$2 } /^##@/ { printf "\n%s\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
-build: test
+build: allure	## Tests reporting with allure
 
 ##@ Development
 test:	## run all tests
@@ -39,10 +39,10 @@ phonenumbers:	## run phonenumbers suite
 	@go run github.com/onsi/ginkgo/v2/ginkgo --label-filter=phonenumbers
 
 ##@ Reporting
-reports:		## generate reports
+reports: clean test		## generate reports
 	@go run github.com/onsi/ginkgo/v2/ginkgo --json-report=report.json --junit-report=report.xml --output-dir=reports
 
-allure: clean	## html allure report
+allure: reports	## html allure report
 	@mkdir allure-results && cp reports/report.xml allure-results && allure generate && echo "allure open"
 
 clean:			## delete allure directories
